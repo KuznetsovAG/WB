@@ -127,10 +127,3 @@ const validateInputs = () => {
     setSuccess(index);
   }
 };
-
-// TODO: PUT ELEMENT BEFORE
-// const productPriceDiv = document.getElementsByClassName(
-//   "products__price price"
-// );
-
-// const productsCardText = document.getElementsByClassName("products__card card");

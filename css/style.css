@@ -225,24 +225,17 @@ body {
 
 
 /** content **/
-
-.page {
-	border: 3px solid rgb(34, 19, 255);
-}
 .page__main-header {
 	background: #F6F6FA;
 	border-radius: 24px;
 	padding: 22px 0 50px 0;
 	display: flex;
 	justify-content: center;
-	border: 1px solid rgb(255, 0, 0);
-	/* overflow: hidden; */
 }
 
 .page__main-container {
 	max-width: var(--max-content-width);
 	width: 100%;
-	border: 1px solid rgb(81, 255, 0);
 	overflow: hidden;
 }
 
@@ -607,7 +600,6 @@ body {
 
 .payment__method {
 	padding: 8px 8px 12px;
-	/* width: 381px; */
 	background: #F6F6FA;
 	border-radius: 8px;
 	margin-bottom: 24px;
@@ -809,7 +801,7 @@ body {
 	display: flex;
 	align-items: flex-start;
 	flex-wrap: wrap;
-	border: 1px solid rgb(218, 0, 0);
+
 }
 
 
@@ -938,7 +930,7 @@ body {
 	color: #F6F6FA;
 }
 
-/* media запросы */
+/* media queries */
 @media (max-width: 1024px) {
 
 	.main-blok__body {
@@ -1019,11 +1011,6 @@ body {
 	.basket {
 		width: 100%;
 	}
-	.basket__body {
-
-		border: 1px solid #000;
-	}
-
 }
 
 @media (max-width: 700px) {
