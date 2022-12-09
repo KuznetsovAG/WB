@@ -408,6 +408,18 @@ body {
 	margin-bottom: 8px;
 }
 
+.counter__min, .counter__plu {
+	background: #FFFFFF;
+	font-size: 20px;
+}
+
+.counter__min:hover {
+	color: rgba(0, 0, 0, 0.2);
+}
+.counter__plu:hover {
+	color: rgba(0, 0, 0, 0.2);
+}
+
 .counter__value {
 	background-color: #FFFFFF;
 }
@@ -1048,6 +1060,9 @@ body {
 	.basket {
 		width: 100%;
 	}
+	.counter__icons {
+		margin-bottom: 20px;
+	}
 }
 
 @media (max-width: 700px) {
@@ -1258,9 +1273,7 @@ body {
 		overflow: hidden;
 	}
 
-	.counter__icons {
-		margin-bottom: 20px;
-	}
+	
 	.products__checkbox-catalog+label::before {
 		background-color: #FFFFFF;
 	  }

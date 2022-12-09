@@ -148,3 +148,20 @@ checkall.onclick = function () {
     checkboxes[i].checked = this.checked;
   }
 };
+
+function addHandlers(count) {
+  let minus = count.querySelector(".counter__min");
+  let number = count.querySelector(".count-res");
+  let plus = count.querySelector(".counter__plu");
+  plus.addEventListener("click", function () {
+    number.innerText++;
+  });
+  minus.addEventListener("click", function () {
+    if (number.innerText >= 1) {
+      number.innerText--;
+    }
+  });
+}
+
+let counts = document.querySelectorAll(".counter__size");
+counts.forEach(addHandlers);
