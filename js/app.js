@@ -127,3 +127,24 @@ const validateInputs = () => {
     setSuccess(index);
   }
 };
+
+const checkboxes = document.querySelectorAll(".products__checkbox");
+const checkall = document.querySelector("#catalog");
+
+console.log("checkboxes :>> ", checkboxes);
+console.log("checkall :>> ", checkall);
+for (let i = 0; i < checkboxes.length; i++) {
+  checkboxes[i].onclick = function () {
+    let checkedCount = document.querySelectorAll("input.thing:checked").length;
+
+    checkall.checked = checkedCount > 0;
+    checkall.indeterminate =
+      checkedCount > 0 && checkedCount < checkboxes.length;
+  };
+}
+
+checkall.onclick = function () {
+  for (let i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = this.checked;
+  }
+};
