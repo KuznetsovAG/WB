@@ -206,7 +206,7 @@ const sumCounter = (countItem) => {
     const descriptionSale = document.querySelector(".description__sale");
 
     const numberOfItemsInTheCart = document.querySelector(".basket__count");
-
+    const mobileShoppingCart = document.querySelector(".basket__count-mobile");
     const totalQuallity = document.querySelector(".goods");
     let totalQuantityOfGoods = Number(totalQuallity.dataset.quantity);
 
@@ -233,7 +233,7 @@ const sumCounter = (countItem) => {
     basketSum.textContent = `${totalPrice} сом`;
     totalQuallity.textContent = `${totalQuallityProduct} товара`;
     numberOfItemsInTheCart.textContent = totalQuallityProduct;
-
+    mobileShoppingCart.textContent = totalQuallityProduct;
     const updatetTotalSumWithoutSale = Array.from(
       document.querySelectorAll("[data-pricesale]")
     ).reduce((acc, element) => {
@@ -260,7 +260,9 @@ const sumCounter = (countItem) => {
       const totalQuantityOfGoods = Number(totalQuallity.dataset.quantity);
 
       const descriptionSale = document.querySelector(".description__sale");
-
+      const mobileShoppingCart = document.querySelector(
+        ".basket__count-mobile"
+      );
       const numberOfItemsInTheCart = document.querySelector(".basket__count");
 
       if (quantityInStockElement && counter < quantityInStock - 1) {
@@ -300,6 +302,7 @@ const sumCounter = (countItem) => {
         amountDiscount > 0 ? `-${amountDiscount} сом` : `${amountDiscount} сом`;
 
       totalSumWithoutSaleElement.innerHTML = `${updatetTotalSumWithoutSale} сом`;
+      mobileShoppingCart.textContent = totalQuallityProduct;
     }
   });
 };

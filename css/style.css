@@ -102,7 +102,8 @@ body {
 	display: flex;
 	align-items: center;
 	padding: 0;
-	gap: 16px;
+	gap: 16%;
+	border: 1px solid #000;
 }
 
 .menu-btn {
@@ -130,6 +131,7 @@ body {
 	display: flex;
 	align-items: center;
 	width: 100%;
+	
 }
 
 .search__input {
@@ -1171,7 +1173,9 @@ body {
 	gap: 24px;
 }
 
-.tab-bar__container::after {
+
+
+.basket__count-mobile {
 	content: '3';
 	display: flex;
 	justify-content: center;
@@ -1179,7 +1183,7 @@ body {
 	width: 16px;
 	height: 16px;
 	position: absolute;
-	left: 51.25%;
+	left: 51%;
 	top: 17.86%;
 	background: #F55123;
 	border-radius: 16px;
@@ -1196,6 +1200,8 @@ body {
 	.main-blok__body {
 		gap: 10px;
 	}
+
+
 
 	.shopping__products {
 		width: 640px;
@@ -1253,6 +1259,46 @@ body {
 	.products__card {
 		width: 275px;
 	}
+	.header__menu {
+		gap: 0;
+	}
+	.header__logo {
+		width: 200px;
+	}
+	.header__logo-text {
+		font-size: 26px;
+		line-height: 24px;
+	}
+ 
+	.header__menu-icons {
+		display: none;
+	}
+	.menu-btn {
+		margin-right: 20px;
+		border: none;
+	}
+
+	.search__input {
+		display: none;
+	}
+
+	.search__logo {
+		display: none;
+	}
+
+	.search__logo-mobile{
+		position: static;
+		display: block;
+	}
+
+	.burger {
+		display: none;
+	}
+	
+	.burger_vector {
+		display: block;
+	}
+
 	.products__stock {
 		display: grid;
 		grid-template-columns: 5fr 0.5fr 1fr;
@@ -1286,30 +1332,11 @@ body {
 		gap: 0;
 	}
 
-	.header__logo-text {
-		font-size: 26px;
-		line-height: 24px;
-	}
-	.header__menu {
-		gap: 0;
-	}
 
 	.products__price {
 		margin-bottom: 20px;
 	}
 
-	.menu-btn {
-		margin-right: 20px;
-		border: none;
-	}
-
-	.burger {
-		display: none;
-	}
-	
-	.burger_vector {
-		display: block;
-	}
 
 	.header__input {
 		width: fit-content;
@@ -1317,19 +1344,6 @@ body {
 
 	.header__menu-icons {
 		display: none;
-	}
-
-	.search__input {
-		display: none;
-	}
-
-	.search__logo {
-		display: none;
-	}
-
-	.search__logo-mobile{
-		position: static;
-		display: block;
 	}
 
 	.products__title h1 {
@@ -1427,7 +1441,11 @@ body {
 	.menu-btn {
 		margin-right: 0;
 	}
-
+	.search__logo-mobile {
+		position: absolute;
+    	top: 33px;
+	}
+	
 
 	.header__logo-text {
 		font-weight: 600;
