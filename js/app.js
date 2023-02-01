@@ -128,11 +128,11 @@ const validateInputs = () => {
   }
 };
 
+/////////////////////////////////////////////////
+
 const checkboxes = document.querySelectorAll(".products__checkbox");
 const checkall = document.querySelector("#catalog");
 
-console.log("checkboxes :>> ", checkboxes);
-console.log("checkall :>> ", checkall);
 for (let i = 0; i < checkboxes.length; i++) {
   checkboxes[i].onclick = function () {
     let checkedCount = document.querySelectorAll("input.thing:checked").length;
@@ -149,19 +149,192 @@ checkall.onclick = function () {
   }
 };
 
-function addHandlers(count) {
-  let minus = count.querySelector(".counter__min");
-  let number = count.querySelector(".count-res");
-  let plus = count.querySelector(".counter__plu");
-  plus.addEventListener("click", function () {
-    number.innerText++;
-  });
-  minus.addEventListener("click", function () {
-    if (number.innerText >= 1) {
-      number.innerText--;
-    }
+//////////////////////////////////////////////
+let isVisible = true;
+
+function visibleProduct(button) {
+  button.addEventListener("click", () => {
+    button.style.transform =
+      button.style.transform == "rotate(180deg)"
+        ? "rotate(0deg)"
+        : "rotate(180deg)";
+    let activeProduct = button.closest(".products__catalog-wrapper");
+    let currenProduct = activeProduct.querySelector(".product__wrapper");
+    isVisible = !isVisible;
+    currenProduct.style.display = isVisible ? "grid" : "none";
   });
 }
 
-let counts = document.querySelectorAll(".counter__size");
-counts.forEach(addHandlers);
+const pushButton = document.querySelectorAll("#push");
+
+pushButton.forEach((button) => visibleProduct(button));
+
+///////////////Counter///////////////////////////
+
+const sumCounter = (countItem) => {
+  const productElement = countItem.closest(".products__stock");
+  const currentPrice = productElement.querySelector(".product");
+  const priceElement = productElement.querySelector(".price__sale > span");
+
+  const price = (priceElement.innerHTML = currentPrice.dataset.price);
+  const countEl = countItem.querySelector(".counter__count");
+  const incrementButton = countItem.querySelector(".counter__increment");
+  const decrementButton = countItem.querySelector(".counter__decrement");
+
+  const quantityInStockElement = productElement.querySelector(
+    ".counter__description"
+  );
+  let quantityInStock = quantityInStockElement
+    ? Number(quantityInStockElement.dataset.quantity)
+    : 0;
+
+  let counter = Number(countEl.textContent);
+
+  const priceWithoutSaleElement =
+    productElement.querySelector("[data-priceSale]");
+  const priceWithoutSale = Number(priceWithoutSaleElement.dataset.pricesale);
+
+  incrementButton.addEventListener("click", () => {
+    const basketSum = document.querySelector(".description__price-title");
+    const totalSum = Number(basketSum.dataset.sum);
+
+    const basketElement = basketSum.closest(".description__price");
+    const totalSumWithoutSaleElement = basketElement.querySelector(
+      "[data-sumwithoutsale]"
+    );
+
+    const descriptionSale = document.querySelector(".description__sale");
+
+    const numberOfItemsInTheCart = document.querySelector(".basket__count");
+
+    const totalQuallity = document.querySelector(".goods");
+    let totalQuantityOfGoods = Number(totalQuallity.dataset.quantity);
+
+    if (quantityInStockElement && counter > quantityInStock + 1) {
+      return;
+    }
+
+    counter++;
+    quantityInStock--;
+    countEl.textContent = counter;
+
+    if (quantityInStockElement) {
+      quantityInStockElement.innerText = `Осталось ${quantityInStock} шт.`;
+    }
+
+    priceWithoutSaleElement.innerText = `${priceWithoutSale * counter} сом`;
+
+    const resultSum = Number(price) * counter;
+    const totalPrice = totalSum + Number(price);
+    basketSum.dataset.sum = totalSum + Number(price);
+    const totalQuallityProduct = totalQuantityOfGoods + 1;
+    totalQuallity.dataset.quantity = totalQuantityOfGoods + 1;
+    priceElement.textContent = resultSum;
+    basketSum.textContent = `${totalPrice} сом`;
+    totalQuallity.textContent = `${totalQuallityProduct} товара`;
+    numberOfItemsInTheCart.textContent = totalQuallityProduct;
+
+    const updatetTotalSumWithoutSale = Array.from(
+      document.querySelectorAll("[data-pricesale]")
+    ).reduce((acc, element) => {
+      const price = parseInt(element.innerText);
+      return acc + price;
+    }, 0);
+
+    const amountDiscount = updatetTotalSumWithoutSale - totalPrice;
+    descriptionSale.textContent = `-${amountDiscount} сом`;
+
+    totalSumWithoutSaleElement.innerHTML = `${updatetTotalSumWithoutSale} сом`;
+  });
+
+  decrementButton.addEventListener("click", function () {
+    if (counter > 0) {
+      const basketSum = document.querySelector(".description__price-title");
+      const basketElement = basketSum.closest(".description__price");
+      const totalSumWithoutSaleElement = basketElement.querySelector(
+        "[data-sumwithoutsale]"
+      );
+
+      const totalSum = Number(basketSum.dataset.sum);
+      const totalQuallity = document.querySelector(".goods");
+      const totalQuantityOfGoods = Number(totalQuallity.dataset.quantity);
+
+      const descriptionSale = document.querySelector(".description__sale");
+
+      const numberOfItemsInTheCart = document.querySelector(".basket__count");
+
+      if (quantityInStockElement && counter < quantityInStock - 1) {
+        return;
+      }
+
+      counter--;
+      quantityInStock++;
+      countEl.textContent = counter;
+
+      if (quantityInStockElement) {
+        quantityInStockElement.innerText = `Осталось ${quantityInStock} шт.`;
+      }
+
+      priceWithoutSaleElement.innerText = `${priceWithoutSale * counter} сом`;
+
+      const resultSum = Number(price) * counter;
+      const totalPrice = totalSum - Number(price);
+      basketSum.dataset.sum = totalSum - Number(price);
+      const totalQuallityProduct = totalQuantityOfGoods - 1;
+      totalQuallity.dataset.quantity = totalQuantityOfGoods - 1;
+
+      priceElement.textContent = resultSum;
+      basketSum.textContent = `${totalPrice} сом`;
+      totalQuallity.textContent = `${totalQuallityProduct} товара`;
+      numberOfItemsInTheCart.textContent = totalQuallityProduct;
+
+      const updatetTotalSumWithoutSale = Array.from(
+        document.querySelectorAll("[data-pricesale]")
+      ).reduce((acc, element) => {
+        const price = parseInt(element.innerText);
+        return acc + price;
+      }, 0);
+
+      const amountDiscount = updatetTotalSumWithoutSale - totalPrice;
+      descriptionSale.textContent =
+        amountDiscount > 0 ? `-${amountDiscount} сом` : `${amountDiscount} сом`;
+
+      totalSumWithoutSaleElement.innerHTML = `${updatetTotalSumWithoutSale} сом`;
+    }
+  });
+};
+
+let counters = document.querySelectorAll(".counters");
+counters.forEach((item) => sumCounter(item));
+
+///////////////////////////////////////////////////////
+
+let modal = document.querySelector(".modal");
+let modalShipping = document.querySelector(".modal__shipping");
+let trigger = document.querySelector(".trigger");
+let closeButton = document.querySelector(".close-button");
+let closeDelivery = document.querySelector(".close-delivery");
+let shippingChange = document.querySelector(".shipping__change");
+
+const toggleModal = () => {
+  modal.classList.toggle("show-modal");
+};
+
+const toggleChange = () => {
+  modalShipping.classList.toggle("show-modal");
+};
+
+const windowOnClick = (event) => {
+  if (event.target === modal) {
+    toggleModal();
+  }
+  if (event.target === modalShipping) {
+    toggleChange();
+  }
+};
+
+shippingChange.addEventListener("click", toggleChange);
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+closeDelivery.addEventListener("click", toggleChange);
+window.addEventListener("click", windowOnClick);

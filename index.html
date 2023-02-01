@@ -15,12 +15,17 @@
           <div class="header__menu">
             <div class="header__menu-burger">
               <div class="menu-btn">
-                <img src="./img/icon/burger.svg" alt="burger" />
+                <img src="./img/icon/burger.svg" alt="burger" class="burger" />
+                <img
+                  src="./img/icon/burger_vector.svg"
+                  alt="burger_vector"
+                  class="burger_vector"
+                />
               </div>
             </div>
 
             <div class="header__logo">
-              <span class="header__logo-text">Товары и точка</span>
+              <span class="header__logo-text">товары и точка</span>
             </div>
           </div>
           <div class="header__input">
@@ -31,6 +36,11 @@
               class="search__logo"
             />
           </div>
+          <img
+            src="./img/icon/mobile_search.svg"
+            alt="mobile_search"
+            class="search__logo-mobile"
+          />
           <div class="header__menu-icons">
             <div class="header__profile">
               <div class="profile__logo">
@@ -40,11 +50,8 @@
             </div>
             <div class="header__basket">
               <div class="basket__logo">
-                <img
-                  src="./img/icon/basket.svg"
-                  alt="basket"
-                  class="basket__count"
-                />
+                <img src="./img/icon/basket.svg" alt="basket" />
+                <p class="basket__count" data-basketsum="3">3</p>
               </div>
               <p class="basket__logo-text">Корзина</p>
             </div>
@@ -61,301 +68,352 @@
                   <div class="products__title">
                     <h1>Корзина</h1>
                     <div class="products__catalog">
-                      <div class="products__catalog-title">
-                        <form>
-                          <input
-                            id="catalog"
-                            type="checkbox"
-                            class="products__checkbox"
-                          />
-                          <label for="catalog">Выбрать все</label>
-                        </form>
-
-                        <img src="./img/icon/vector.svg" alt="done" />
-                      </div>
-                      <div class="products__stock">
-                        <div class="products__content products__content-first">
-                          <form class="checkbox__input">
+                      <div class="products__catalog-wrapper">
+                        <div class="products__catalog-title">
+                          <form>
                             <input
-                              id="catalog1"
+                              id="catalog"
                               type="checkbox"
-                              class="products__checkbox products__checkbox-catalog"
+                              class="products__checkbox"
                             />
-                            <label for="catalog1"></label>
+                            <label for="catalog">Выбрать все</label>
                           </form>
+
                           <img
-                            src="./img/products/t-shirt.svg"
-                            alt="t-shirt"
-                            class="products__photo"
+                            src="./img/icon/vector.svg"
+                            alt="done"
+                            id="push"
                           />
-                          <div class="products__card card">
-                            <p class="card__name">Футболка UZcotton мужская</p>
-                            <div class="card__options">
-                              <p class="card__color">Цвет: белый</p>
-                              <p class="card__size">Размер: 56</p>
+                        </div>
+                        <div class="product__wrapper">
+                          <div class="products__stock">
+                            <div
+                              class="products__content products__content-first"
+                            >
+                              <form class="checkbox__input">
+                                <input
+                                  id="catalog1"
+                                  type="checkbox"
+                                  class="products__checkbox products__checkbox-catalog"
+                                />
+                                <label for="catalog1"></label>
+                              </form>
+                              <img
+                                src="./img/products/tshirt.png"
+                                alt="t-shirt"
+                                class="products__photo"
+                              />
+                              <div class="products__card card">
+                                <p class="card__name">
+                                  Футболка UZcotton мужская
+                                </p>
+                                <div class="card__options">
+                                  <p class="card__color">Цвет: белый</p>
+                                  <p class="card__size">Размер: 56</p>
+                                </div>
+                                <div class="card__provider">
+                                  <p class="card__stock">Коледино WB</p>
+                                  <p class="card__firm">
+                                    OOO Вайлдберриз
+                                    <img src="./img/icon/info.svg" alt="info" />
+                                  </p>
+                                </div>
+                              </div>
                             </div>
-                            <div class="card__provider">
-                              <p class="card__stock">Коледино WB</p>
-                              <p class="card__firm">
-                                OOO Вайлдберриз
-                                <img src="./img/icon/info.svg" alt="info" />
+
+                            <div class="products__counter counter">
+                              <div class="counters">
+                                <div class="counter__size">
+                                  <button class="counter__decrement">-</button>
+                                  <div class="counter__count">1</div>
+                                  <button class="counter__increment">+</button>
+                                </div>
+                              </div>
+                              <p class="counter__description" data-quantity="2">
+                                Осталось 2 шт.
                               </p>
+                              <div class="counter__icons">
+                                <img
+                                  src="./img/icon/like.svg"
+                                  alt="like"
+                                  class="counter__icons-like"
+                                />
+                                <img
+                                  src="./img/icon/delete.svg"
+                                  alt="delete"
+                                  class="counter__icons-delete"
+                                />
+                              </div>
+                            </div>
+                            <div class="products__price price">
+                              <div class="product" data-price="522">
+                                <p class="price__sale">
+                                  <span class="price"></span> сом
+                                </p>
+                              </div>
+                              <span class="price__static" data-priceSale="1051"
+                                >1051 сом</span
+                              >
                             </div>
                           </div>
-                        </div>
+                          <div class="products__stock">
+                            <div class="products__content">
+                              <form class="checkbox__input">
+                                <input
+                                  id="catalog2"
+                                  type="checkbox"
+                                  class="products__checkbox products__checkbox-catalog"
+                                />
+                                <label for="catalog2"></label>
+                              </form>
+                              <img
+                                src="./img/products/phone.png"
+                                alt="phone"
+                                class="products__photo"
+                              />
+                              <div class="products__card card">
+                                <p class="card__name">
+                                  Силиконовый чехол картхолдер (отверстия) для
+                                  карт, прозрачный кейс бампер на Apple iPhone
+                                  XR, MobiSafe
+                                </p>
+                                <div class="card__options">
+                                  <p class="card__color">Цвет: прозрачный</p>
+                                  <p class="card__size"></p>
+                                </div>
+                                <div class="card__provider">
+                                  <p class="card__stock">Коледино WB</p>
+                                  <p class="card__firm">
+                                    OOO Мегапрофстиль
+                                    <img src="./img/icon/info.svg" alt="info" />
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
 
-                        <div class="products__counter counter">
-                          <div class="counter__size">
-                            <button class="counter__min" id="minus">-</button>
-                            <p class="count-res" id="number">1</p>
-                            <button class="counter__plu" id="add">+</button>
-                          </div>
-                          <p class="counter__description">Осталось 2 шт.</p>
-                          <div class="counter__icons">
-                            <img
-                              src="./img/icon/like.svg"
-                              alt="like"
-                              class="counter__icons-like"
-                            />
-                            <img
-                              src="./img/icon/delete.svg"
-                              alt="delete"
-                              class="counter__icons-delete"
-                            />
-                          </div>
-                        </div>
-                        <div class="products__price price">
-                          <p class="price__sale">522 сом</p>
-                          <span class="price__static">1051 сом</span>
-                        </div>
-                      </div>
-                      <div class="products__stock">
-                        <div class="products__content">
-                          <form class="checkbox__input">
-                            <input
-                              id="catalog2"
-                              type="checkbox"
-                              class="products__checkbox products__checkbox-catalog"
-                            />
-                            <label for="catalog2"></label>
-                          </form>
-                          <img
-                            src="./img/products/phone.svg"
-                            alt="phone"
-                            class="products__photo"
-                          />
-                          <div class="products__card card">
-                            <p class="card__name">
-                              Силиконовый чехол картхолдер (отверстия) для карт,
-                              прозрачный кейс бампер на Apple iPhone XR,
-                              MobiSafe
-                            </p>
-                            <div class="card__options">
-                              <p class="card__color">Цвет: прозрачный</p>
-                              <p class="card__size"></p>
+                            <div class="products__counter counter">
+                              <div class="counters">
+                                <div class="counter__size">
+                                  <button class="counter__decrement">-</button>
+                                  <div class="counter__count">1</div>
+                                  <button class="counter__increment">+</button>
+                                </div>
+                              </div>
+
+                              <div class="counter__icons">
+                                <img
+                                  src="./img/icon/like.svg"
+                                  alt="like"
+                                  class="counter__icons-like"
+                                />
+                                <img
+                                  src="./img/icon/delete.svg"
+                                  alt="delete"
+                                  class="counter__icons-delete"
+                                />
+                              </div>
                             </div>
-                            <div class="card__provider">
-                              <p class="card__stock">Коледино WB</p>
-                              <p class="card__firm">
-                                OOO Мегапрофстиль
-                                <img src="./img/icon/info.svg" alt="info" />
+                            <div class="products__price price">
+                              <div class="product" data-price="10500">
+                                <p class="price__sale">
+                                  <span class="price price__sale-big"></span>
+                                  сом
+                                </p>
+                              </div>
+                              <span class="price__static" data-priceSale="11500"
+                                >11500 сом</span
+                              >
+                            </div>
+                          </div>
+                          <div class="products__stock">
+                            <div class="products__content">
+                              <form class="checkbox__input">
+                                <input
+                                  id="catalog3"
+                                  type="checkbox"
+                                  class="products__checkbox products__checkbox-catalog"
+                                />
+                                <label for="catalog3"></label>
+                              </form>
+                              <img
+                                src="./img/products/book.png"
+                                alt="book"
+                                class="products__photo"
+                              />
+                              <div class="products__card card">
+                                <p class="card__name">
+                                  Карандаши цветные Faber-Castell "Замок", набор
+                                  24 цвета, заточенные, шестигранные,
+                                  Faber-Castell
+                                </p>
+                                <div class="card__options">
+                                  <p class="card__color"></p>
+                                  <p class="card__size"></p>
+                                </div>
+                                <div class="card__provider">
+                                  <p class="card__stock">Коледино WB</p>
+                                  <p class="card__firm">
+                                    OOO Вайлдберриз
+                                    <img src="./img/icon/info.svg" alt="info" />
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="products__counter counter">
+                              <div class="counters">
+                                <div class="counter__size">
+                                  <button class="counter__decrement">-</button>
+                                  <div class="counter__count">1</div>
+                                  <button class="counter__increment">+</button>
+                                </div>
+                              </div>
+                              <p class="counter__description" data-quantity="2">
+                                Осталось 2 шт.
                               </p>
+                              <div class="counter__icons">
+                                <img
+                                  src="./img/icon/like.svg"
+                                  alt="like"
+                                  class="counter__icons-like"
+                                />
+                                <img
+                                  src="./img/icon/delete.svg"
+                                  alt="delete"
+                                  class="counter__icons-delete"
+                                />
+                              </div>
+                            </div>
+                            <div class="products__price price">
+                              <div class="product" data-price="247">
+                                <p class="price__sale">
+                                  <span class="price"></span> сом
+                                </p>
+                              </div>
+                              <span class="price__static" data-priceSale="475"
+                                >475 сом</span
+                              >
                             </div>
                           </div>
                         </div>
-
-                        <div class="products__counter counter">
-                          <div class="counter__size">
-                            <button class="counter__min" id="minus">-</button>
-                            <p class="count-res" id="number">200</p>
-                            <button class="counter__plu" id="add">+</button>
-                          </div>
-                          <p class="counter__description"></p>
-                          <div class="counter__icons">
-                            <img
-                              src="./img/icon/like.svg"
-                              alt="like"
-                              class="counter__icons-like"
-                            />
-                            <img
-                              src="./img/icon/delete.svg"
-                              alt="delete"
-                              class="counter__icons-delete"
-                            />
-                          </div>
-                        </div>
-                        <div class="products__price price">
-                          <p class="price__sale price__sale-big">
-                            2 100 047 сом
-                          </p>
-                          <span class="price__static">2 300 047 сом</span>
-                        </div>
                       </div>
-                      <div class="products__stock">
-                        <div class="products__content">
-                          <form class="checkbox__input">
-                            <input
-                              id="catalog3"
-                              type="checkbox"
-                              class="products__checkbox products__checkbox-catalog"
-                            />
-                            <label for="catalog3"></label>
-                          </form>
+                      <div class="products__catalog-wrapper">
+                        <div class="products__catalog-title">
+                          <h2>Отсутствуют · 3 товара</h2>
                           <img
-                            src="./img/products/book.svg"
-                            alt="book"
-                            class="products__photo"
+                            src="./img/icon/vector.svg"
+                            alt="done"
+                            id="push"
                           />
-                          <div class="products__card card">
-                            <p class="card__name">
-                              Карандаши цветные Faber-Castell "Замок", набор 24
-                              цвета, заточенные, шестигранные, Faber-Castell
-                            </p>
-                            <div class="card__options">
-                              <p class="card__color"></p>
-                              <p class="card__size"></p>
+                        </div>
+                        <div class="product__wrapper">
+                          <div class="products__stock">
+                            <div
+                              class="products__content products__content-inactive products__content-first"
+                            >
+                              <img
+                                src="./img/inactive/inactive_tshirt.png"
+                                alt="t-shirt"
+                                class="products__photo"
+                              />
+                              <div class="products__card card">
+                                <p class="card__name">
+                                  Футболка UZcotton мужская
+                                </p>
+                                <div class="card__options">
+                                  <p class="card__color">Цвет: белый</p>
+                                  <p class="card__size">Размер: 56</p>
+                                </div>
+                                <div class="card__provider">
+                                  <p class="card__stock"></p>
+                                  <p class="card__firm"></p>
+                                </div>
+                              </div>
                             </div>
-                            <div class="card__provider">
-                              <p class="card__stock">Коледино WB</p>
-                              <p class="card__firm">
-                                OOO Вайлдберриз
-                                <img src="./img/icon/info.svg" alt="info" />
-                              </p>
+                            <div class="products__counter counter-inactive">
+                              <div class="counter__icons">
+                                <img
+                                  src="./img/icon/like.svg"
+                                  alt="like"
+                                  class="counter__icons-like"
+                                />
+                                <img
+                                  src="./img/icon/delete.svg"
+                                  alt="delete"
+                                  class="counter__icons-delete"
+                                />
+                              </div>
                             </div>
                           </div>
-                        </div>
+                          <div class="products__stock">
+                            <div
+                              class="products__content products__content-inactive"
+                            >
+                              <img
+                                src="./img/inactive/inactive_phone.png"
+                                alt="phone"
+                                class="products__photo"
+                              />
+                              <div class="products__card card">
+                                <p class="card__name">
+                                  Силиконовый чехол картхолдер (отверстия) для
+                                  карт, прозрачный кейс бампер на Apple iPhone
+                                  XR, MobiSafe
+                                </p>
+                                <div class="card__options">
+                                  <p class="card__color">Цвет: прозрачный</p>
+                                  <p class="card__size"></p>
+                                </div>
+                              </div>
+                            </div>
 
-                        <div class="products__counter counter">
-                          <div class="counter__size">
-                            <button class="counter__min" id="minus">-</button>
-                            <p class="count-res" id="number">2</p>
-                            <button class="counter__plu" id="add">+</button>
-                          </div>
-                          <p class="counter__description">Осталось 2 шт.</p>
-                          <div class="counter__icons">
-                            <img
-                              src="./img/icon/like.svg"
-                              alt="like"
-                              class="counter__icons-like"
-                            />
-                            <img
-                              src="./img/icon/delete.svg"
-                              alt="delete"
-                              class="counter__icons-delete"
-                            />
-                          </div>
-                        </div>
-                        <div class="products__price price">
-                          <p class="price__sale">494 сом</p>
-                          <span class="price__static">950 сом</span>
-                        </div>
-                      </div>
-                      <div class="products__catalog-title">
-                        <h2>Отсутствуют · 3 товара</h2>
-                        <img src="./img/icon/vector.svg" alt="done" />
-                      </div>
-                      <div class="products__stock">
-                        <div
-                          class="products__content products__content-inactive products__content-first"
-                        >
-                          <img
-                            src="./img/inactive/inactive_tshirt.png"
-                            alt="t-shirt"
-                            class="products__photo"
-                          />
-                          <div class="products__card card">
-                            <p class="card__name">Футболка UZcotton мужская</p>
-                            <div class="card__options">
-                              <p class="card__color">Цвет: белый</p>
-                              <p class="card__size">Размер: 56</p>
-                            </div>
-                            <div class="card__provider">
-                              <p class="card__stock"></p>
-                              <p class="card__firm"></p>
+                            <div class="products__counter counter-inactive">
+                              <div class="counter__icons">
+                                <img
+                                  src="./img/icon/like.svg"
+                                  alt="like"
+                                  class="counter__icons-like"
+                                />
+                                <img
+                                  src="./img/icon/delete.svg"
+                                  alt="delete"
+                                  class="counter__icons-delete"
+                                />
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="products__counter counter-inactive">
-                          <div class="counter__icons">
-                            <img
-                              src="./img/icon/like.svg"
-                              alt="like"
-                              class="counter__icons-like"
-                            />
-                            <img
-                              src="./img/icon/delete.svg"
-                              alt="delete"
-                              class="counter__icons-delete"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="products__stock">
-                        <div
-                          class="products__content products__content-inactive"
-                        >
-                          <img
-                            src="./img/inactive/inactive_phone.png"
-                            alt="phone"
-                            class="products__photo"
-                          />
-                          <div class="products__card card">
-                            <p class="card__name">
-                              Силиконовый чехол картхолдер (отверстия) для карт,
-                              прозрачный кейс бампер на Apple iPhone XR,
-                              MobiSafe
-                            </p>
-                            <div class="card__options">
-                              <p class="card__color">Цвет: прозрачный</p>
-                              <p class="card__size"></p>
+                          <div class="products__stock">
+                            <div
+                              class="products__content products__content-inactive products__content-last"
+                            >
+                              <img
+                                src="./img/inactive/inactive_book.png"
+                                alt="book"
+                                class="products__photo"
+                              />
+                              <div class="products__card card">
+                                <p class="card__name">
+                                  Карандаши цветные Faber-Castell "Замок", набор
+                                  24 цвета, заточенные, шестигранные,
+                                  Faber-Castell
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        </div>
 
-                        <div class="products__counter counter-inactive">
-                          <div class="counter__icons">
-                            <img
-                              src="./img/icon/like.svg"
-                              alt="like"
-                              class="counter__icons-like"
-                            />
-                            <img
-                              src="./img/icon/delete.svg"
-                              alt="delete"
-                              class="counter__icons-delete"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="products__stock">
-                        <div
-                          class="products__content products__content-inactive products__content-last"
-                        >
-                          <img
-                            src="./img/inactive/inactive_book.png"
-                            alt="book"
-                            class="products__photo"
-                          />
-                          <div class="products__card card">
-                            <p class="card__name">
-                              Карандаши цветные Faber-Castell "Замок", набор 24
-                              цвета, заточенные, шестигранные, Faber-Castell
-                            </p>
-                          </div>
-                        </div>
-
-                        <div class="products__counter counter-inactive">
-                          <div class="counter__icons">
-                            <img
-                              src="./img/icon/like.svg"
-                              alt="like"
-                              class="counter__icons-like"
-                            />
-                            <img
-                              src="./img/icon/delete.svg"
-                              alt="delete"
-                              class="counter__icons-delete"
-                            />
+                            <div class="products__counter counter-inactive">
+                              <div class="counter__icons">
+                                <img
+                                  src="./img/icon/like.svg"
+                                  alt="like"
+                                  class="counter__icons-like"
+                                />
+                                <img
+                                  src="./img/icon/delete.svg"
+                                  alt="delete"
+                                  class="counter__icons-delete"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -367,7 +425,9 @@
                   <div class="shipping__body">
                     <div class="shipping__title">
                       <h2>Способ доставки</h2>
-                      <button class="shipping__button">Изменить</button>
+                      <button class="shipping__button shipping__change">
+                        Изменить
+                      </button>
                     </div>
                     <div class="shipping__description">
                       <div class="shipping__description-title">
@@ -395,21 +455,27 @@
                       </div>
                       <div class="shipping__description-text">
                         <div class="shipping__product">
-                          <img
-                            src="./img/products/t-shirt_mini.svg"
-                            alt="t-shirt"
-                            class="shipping__product-img"
-                          />
-                          <img
-                            src="./img/products/phone_mini.svg"
-                            alt="phone"
-                            class="shipping__product-img"
-                          />
-                          <img
-                            src="./img/products/book_mini.svg"
-                            alt="book"
-                            class="shipping__product-img"
-                          />
+                          <div class="shipping__product-img">
+                            <img
+                              src="./img/products/t-shirt_mini.svg"
+                              alt="t-shirt"
+                              class="product-img"
+                            />
+                          </div>
+                          <div class="shipping__product-img">
+                            <img
+                              src="./img/products/phone_mini.svg"
+                              alt="phone"
+                              class="product-img"
+                            />
+                          </div>
+                          <div class="shipping__product-img">
+                            <img
+                              src="./img/products/book_mini.svg"
+                              alt="book"
+                              class="product-img"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -419,11 +485,13 @@
                       </div>
                       <div class="shipping__description-text">
                         <div class="shipping__product">
-                          <img
-                            src="./img/products/phone_mini.svg"
-                            alt="phone"
-                            class="shipping__product-img"
-                          />
+                          <div class="shipping__product-img">
+                            <img
+                              src="./img/products/phone_mini.svg"
+                              alt="phone"
+                              class="product-img"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -440,14 +508,16 @@
                   <div class="payment__goods-body">
                     <div class="payment__goods-title">
                       <h2>Способ оплаты</h2>
-                      <button class="payment__goods-button shipping__button">
+                      <button
+                        class="payment__goods-button shipping__button trigger"
+                      >
                         Изменить
                       </button>
                     </div>
                     <div class="payment__card">
                       <div class="payment__card-system system">
                         <div class="system__card">
-                          <img src="./img/icon/mir.svg" alt="mir" />
+                          <img src="./img/currency/mir.svg" alt="mir" />
                         </div>
                       </div>
                       <p class="payment__card-number">1234 12•• •••• 1234</p>
@@ -537,21 +607,117 @@
                   <div class="basket__description description">
                     <div class="description__product">
                       <h2 class="description__product-title">Итого</h2>
-                      <p>4 товара</p>
+                      <p class="goods" data-quantity="3">3 товара</p>
                       <p>Скидка</p>
                       <p>Доставка</p>
                     </div>
                     <div class="description__price">
-                      <h2 class="description__price-title">2 101 063 сом</h2>
-                      <p>2 302 048 сом</p>
-                      <p>-200 985 сом</p>
+                      <h2 class="description__price-title" data-sum="11269">
+                        11269 сом
+                      </h2>
+                      <p class="description__price" data-sumwithoutsale="13026">
+                        13026 сом
+                      </p>
+                      <p class="description__sale" data-sale="1757">
+                        -1757 сом
+                      </p>
                       <p>Бесплатно</p>
                     </div>
                   </div>
                   <div class="basket__delivery delivery">
                     <div class="delivery__title">
                       <h2>Доставка в пункт выдачи</h2>
-                      <img src="./img/icon/pencil.svg" alt="pencil" />
+                      <img
+                        src="./img/icon/pencil.svg"
+                        alt="pencil"
+                        class="shipping__change"
+                      />
+                      <div class="modal__shipping">
+                        <div class="shipping__content">
+                          <div class="shipping__header">
+                            <p class="shipping__title">Способ доставки</p>
+                            <img
+                              src="./img/icon/close.svg"
+                              alt="close"
+                              class="close-delivery"
+                            />
+                          </div>
+                          <div class="delivery__method">
+                            <div class="delivery__choice choice">
+                              <button class="choice__issue">
+                                В пункт выдачи
+                              </button>
+                              <button class="choice__courier">Курьером</button>
+                            </div>
+                            <div class="delivery__addresses addresses">
+                              <div class="addresses__title">Мои адреса</div>
+                              <div class="addresses__radio-buttons">
+                                <div class="addresses__radio">
+                                  <input
+                                    id="radio-1"
+                                    type="radio"
+                                    name="radio"
+                                    class="radio"
+                                    value="1"
+                                    checked
+                                  />
+
+                                  <div class="addresses__street">
+                                    <label for="radio-1"
+                                      >Бишкек, улица Табышалиева, 57</label
+                                    >
+                                  </div>
+                                  <img
+                                    src="./img/icon/delete-basket.svg"
+                                    alt="delete-basket"
+                                  />
+                                </div>
+
+                                <div class="addresses__radio">
+                                  <input
+                                    id="radio-2"
+                                    type="radio"
+                                    name="radio"
+                                    class="radio"
+                                    value="2"
+                                  />
+                                  <div class="addresses__street">
+                                    <label for="radio-2"
+                                      >Бишкек, улица Жукеева-Пудовкина,
+                                      77/1</label
+                                    >
+                                  </div>
+                                  <img
+                                    src="./img/icon/delete-basket.svg"
+                                    alt="delete-basket"
+                                  />
+                                </div>
+
+                                <div class="addresses__radio">
+                                  <input
+                                    id="radio-3"
+                                    type="radio"
+                                    name="radio"
+                                    class="radio"
+                                    value="3"
+                                  />
+                                  <div class="addresses__street">
+                                    <label for="radio-3"
+                                      >Бишкек, микрорайон Джал, улица Ахунбаева
+                                      Исы, 67/1</label
+                                    >
+                                  </div>
+                                  <img
+                                    src="./img/icon/delete-basket.svg"
+                                    alt="delete-basket"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="modal__button">Выбрать</button>
+                        </div>
+                      </div>
                     </div>
                     <div class="delivery__point">
                       <p class="delivery__address">
@@ -571,11 +737,90 @@
                     <div class="payment__title">
                       <h2>Оплата картой</h2>
                       <img src="./img/icon/pencil.svg" alt="pencil" />
+                      <div class="modal">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <p class="modal-title">Способ оплаты</p>
+                            <img
+                              src="./img/icon/close.svg"
+                              alt="close"
+                              class="close-button"
+                            />
+                          </div>
+                          <div class="modal__radio-buttons">
+                            <div class="form__radio">
+                              <input
+                                id="radio-1"
+                                type="radio"
+                                name="radio"
+                                class="radio"
+                                value="1"
+                                checked
+                              />
+                              <img
+                                src="./img/currency/mir.svg"
+                                alt="mir"
+                                class="currency-card"
+                              />
+                              <label for="radio-1">1234 56•• •••• 1234</label>
+                            </div>
+
+                            <div class="form__radio">
+                              <input
+                                id="radio-2"
+                                type="radio"
+                                name="radio"
+                                class="radio"
+                                value="2"
+                              />
+                              <img
+                                src="./img/currency/visa.svg"
+                                alt="visa"
+                                class="currency-card"
+                              />
+                              <label for="radio-2">1234 56•• •••• 1234</label>
+                            </div>
+
+                            <div class="form__radio">
+                              <input
+                                id="radio-3"
+                                type="radio"
+                                name="radio"
+                                class="radio"
+                                value="3"
+                              />
+                              <img
+                                src="./img/currency/mastercard.svg"
+                                alt="mastercard"
+                                class="currency-card"
+                              />
+                              <label for="radio-3">1234 56•• •••• 1234</label>
+                            </div>
+
+                            <div class="form__radio">
+                              <input
+                                id="radio-3"
+                                type="radio"
+                                name="radio"
+                                class="radio"
+                                value="4"
+                              />
+                              <img
+                                src="./img/currency/humo.svg"
+                                alt="humo"
+                                class="currency-card"
+                              />
+                              <label for="radio-3">1234 56•• •••• 1234</label>
+                            </div>
+                          </div>
+                          <button class="modal__button">Выбрать</button>
+                        </div>
+                      </div>
                     </div>
                     <div class="payment__card payment__card-basket">
                       <div class="payment__card-system system">
                         <div class="system__card">
-                          <img src="./img/icon/mir.svg" alt="mir" />
+                          <img src="./img/currency/mir.svg" alt="mir" />
                         </div>
                       </div>
                       <p class="payment__card-number">1234 12•• •••• 1234</p>
