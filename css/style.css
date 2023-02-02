@@ -782,7 +782,8 @@ body {
 
 .basket__delivery {
 	margin-bottom: 24px;
-	width: 100%;
+	width: 100%; 
+	position: relative;
 }
 
 .delivery__title {
@@ -845,7 +846,9 @@ body {
     display: block;
 }
 
-
+.delivery__terms-text:hover ~ .purchase__basket {
+    display: block;
+}
 
 .purchase__returns {
 	padding: 10px 16px 14px;
@@ -860,7 +863,20 @@ body {
 	top: 34px;
 }
 
-.returns__info {
+.purchase__basket {
+	padding: 10px 16px 14px;
+	gap: 8px;
+	position: absolute;
+	width: 288px;
+	left: 8px;
+	top: 50px;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	display: none;
+}
+
+.returns__info, .purchase__basket-info {
 	font-weight: 400;
 	font-size: 13px;
 	line-height: 16px;
