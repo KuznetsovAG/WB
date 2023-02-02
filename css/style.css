@@ -357,6 +357,7 @@ body {
 	grid-template-columns: 5fr 0.5fr 1fr;
 	width: 100%;
 	margin-bottom: 32px;
+	position: relative;
 }
 
 
@@ -411,6 +412,92 @@ body {
 	line-height: 16px;
 	color: #A0A0A4;
 
+}
+
+.info-to-hover:hover ~ .company-to-show {
+    display: block;
+}
+
+
+
+.company-to-show {
+	width: 280px;
+	background: #FFFFFF;
+	border-radius: 8px;
+	padding: 11px 16px 13px 16px;
+	display: none;
+	position: absolute;
+	z-index: 15;
+}
+
+.company__title {
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 16px;
+	color: #000000;
+	margin-bottom: 8px;
+}
+
+.company__number {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	color: #000000;
+	margin-bottom: 8px;
+}
+
+.company__addres {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	color: #000000;
+}
+
+.price__static:hover ~ .discount__size {
+    display: block;
+}
+
+
+.discount__size {
+	width: 100%;
+	padding: 11px 16px 13px;
+	width: 239px;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	display: none;
+	position: absolute;
+	top: 55px;
+	right: 0px;
+
+}
+
+.discount {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+}
+
+.discount__customer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.discount__magnitude {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	color: #A0A0A4;
+}
+
+.discount__value {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;	
+	color: #000000;
 }
 
 .trigger {
@@ -738,6 +825,7 @@ body {
 	border-radius: 8px;
 	display: flex;
 	align-items: center;
+	position: relative;
 }
 
 .delivery__terms-text {
@@ -752,6 +840,35 @@ body {
 	color: #0CB477;
 	border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
 }
+
+.delivery__terms-text:hover ~ .purchase__returns {
+    display: block;
+}
+
+
+
+.purchase__returns {
+	padding: 10px 16px 14px;
+	gap: 8px;
+	width: 288px;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	display: none;
+	position: absolute;
+	left: 30%;
+	top: 34px;
+}
+
+.returns__info {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	color: #000000;
+}
+
 
 .basket__payment {
 	width: 100%;
