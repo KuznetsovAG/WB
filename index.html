@@ -720,7 +720,7 @@
                       <img
                         src="./img/icon/pencil.svg"
                         alt="pencil"
-                        class="shipping__change"
+                        class="edit__delivery"
                       />
                       <div class="modal__shipping">
                         <div class="shipping__content">
@@ -832,7 +832,11 @@
                   <div class="basket__payment payment">
                     <div class="payment__title">
                       <h2>Оплата картой</h2>
-                      <img src="./img/icon/pencil.svg" alt="pencil" />
+                      <img
+                        src="./img/icon/pencil.svg"
+                        alt="pencil"
+                        class="edit__payment"
+                      />
                       <div class="modal">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -935,12 +939,9 @@
                         Спишем оплату с карты при получении
                       </p>
                     </div>
-                    <input
-                      type="submit"
-                      value=" Заказать"
-                      form="form"
-                      class="payment__button"
-                    />
+                    <button id="order" form="form" class="payment__button">
+                      Заказать
+                    </button>
 
                     <div class="payment__consent">
                       <img

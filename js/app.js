@@ -318,7 +318,8 @@ let trigger = document.querySelector(".trigger");
 let closeButton = document.querySelector(".close-button");
 let closeDelivery = document.querySelector(".close-delivery");
 let shippingChange = document.querySelector(".shipping__change");
-
+let editDelivery = document.querySelector(".edit__delivery");
+let editPayment = document.querySelector(".edit__payment");
 const toggleModal = () => {
   modal.classList.toggle("show-modal");
 };
@@ -341,3 +342,22 @@ trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 closeDelivery.addEventListener("click", toggleChange);
 window.addEventListener("click", windowOnClick);
+editDelivery.addEventListener("click", toggleChange);
+editPayment.addEventListener("click", toggleModal);
+
+////////////////////////////////////////////////////
+
+function toggle() {
+  const order = document.getElementById("order");
+  const totalPriceBasket = document.querySelector(".description__price-title");
+  const totalPriceBasketValue = totalPriceBasket.dataset.sum;
+  const paymentLater = document.querySelector(".payment__later");
+  if (this.checked) {
+    paymentLater.style.display = "none";
+    order.innerText = `Оплатить ${totalPriceBasketValue} сом`;
+  } else {
+    order.innerText = "Заказать";
+    paymentLater.style.display = "block";
+  }
+}
+document.getElementById("payment").onchange = toggle;
