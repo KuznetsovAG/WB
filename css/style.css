@@ -515,6 +515,8 @@ body {
 	visibility: hidden;
 	transform: scale(1.1);
 	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+	z-index: 10;
 }
 
 
@@ -570,7 +572,9 @@ body {
 	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
-
+.modal__radio-button {
+	margin-bottom: 139px;
+}
 
 .modal__button {
 	display: flex;
@@ -589,9 +593,7 @@ body {
 
 }
 
-.modal__radio-buttons {
-	margin-bottom: 139px;
-}
+
 
 .form__radio {
 	display: flex;
@@ -606,6 +608,50 @@ body {
 .currency-card {
 	margin-right: 4px;
 }
+
+.radio-btn {
+	width: 0;
+	height: 0;
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+	top: 50%;
+  }
+  
+  
+  .custom-radio-btn {
+	position: relative;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	margin-right: 5px;
+  }
+  
+  .custom-radio-btn::before {
+	content: "";
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: #FFFFFF;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: 0.2s ease-in;
+  }
+  
+  .radio-btn:checked + .custom-radio-btn::before {
+	transform: translate(-50%, -50%) scale(1);
+  }
+
+  .radio-btn:focus + .custom-radio-btn {
+	background: #CB11AB;
+  }
+
 
 .delivery__choice {
 	display: flex;
@@ -647,16 +693,15 @@ body {
 
 
 
-.addresses__radio {
+.form__radio-addresses {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 20px;
 }
 
-
-.addresses__street {
+.form__radio-addresses label {
 	width: 400px;
-	display: flex;
-	justify-content: space-between;
 }
 
 .addresses__radio-buttons {
@@ -715,6 +760,21 @@ body {
 	margin-left: 20px;
 } 
 
+.icon-link svg {
+	fill: black; 
+	}
+	
+	.icon-link:hover svg {
+	  fill:red;
+	} 
+
+	.modal-icon svg {
+		fill: #A0A0A4; 
+		}
+		
+		.modal-icon:hover svg {
+		  fill:red;
+		} 
 
 
 .products__price {
@@ -1333,7 +1393,9 @@ body {
 		gap: 10px;
 	}
 
-
+	.header__menu {
+		gap: 8px;
+	}
 
 	.shopping__products {
 		width: 640px;
@@ -1586,7 +1648,6 @@ body {
 	}
 	.header__menu {
 		width: 100%;
-		justify-content: center;
 	}
 	.menu-btn {
 		border: none;
@@ -1632,9 +1693,8 @@ body {
 
 	.price {
 		font-weight: 700;
-		font-size: 20px;
-		line-height: 28px;
-		letter-spacing: -0.01em;
+		font-size: 16px;
+		line-height: 0px;
 	}
 	
 	.price__sale-big {
